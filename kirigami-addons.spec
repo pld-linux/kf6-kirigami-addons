@@ -9,12 +9,12 @@
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
 Name:		kirigami-addons
-Version:	0.7.0
+Version:	0.8.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
-# Source0-md5:	5ed3f33bb0cf55c9f9ad6c5ab15e6cfb
+# Source0-md5:	aeb0cf47a1915cc38444d3996c02d0d1
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
