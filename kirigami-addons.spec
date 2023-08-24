@@ -9,12 +9,12 @@
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
 Name:		kirigami-addons
-Version:	0.8.0
+Version:	0.11.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
-# Source0-md5:	aeb0cf47a1915cc38444d3996c02d0d1
+# Source0-md5:	dfb9ba7a8f57c96d9bc1237399829bd3
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -22,7 +22,7 @@ BuildRequires:	Qt5Network-devel >= %{qtver}
 BuildRequires:	Qt5Quick-controls2-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
 BuildRequires:	catdoc
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.20
 BuildRequires:	kf5-extra-cmake-modules >= 5.102.0
 BuildRequires:	kf5-kirigami2-devel >= 5.102.0
 BuildRequires:	ninja
@@ -52,16 +52,14 @@ Pliki nagłówkowe dla programistów używających %{name}.
 %setup -q
 
 %build
-install -d build
-cd build
-%cmake -G Ninja \
+%cmake -B build \
+	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 %install
