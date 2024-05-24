@@ -11,12 +11,12 @@
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
 Name:		kirigami-addons
-Version:	0.11.90
+Version:	1.2.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/kirigami-addons/%{name}-%{version}.tar.xz
-# Source0-md5:	c64b8143f9802923110044eed6926144
+Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
+# Source0-md5:	2412b8a953bb4ed6013c070672382aa7
 URL:		http://www.kde.org/
 %if %{with qt5}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -98,8 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/DoubleFloatingButton.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/FloatingButton.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/MessageDialog.qml
-%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/MessageDialogButton.qml
-%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/MessageDialogButtonBox.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/SearchPopupField.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/SegmentedButton.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/componentsplugin.qmltypes
@@ -193,6 +191,24 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/TreeViewDecoration.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/treeviewplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/FloatingToolBar.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/FormCardDialog.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/FormColorDelegate.qml
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/HeaderComponent.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/KTableView.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/ListTableView.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/libtableviewplugin.so
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/AbstractHeaderComponent.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/AbstractTable.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/HeaderDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/ListCellDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/ListRowDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/TableCellDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/qmldir
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/tableviewplugin.qmltypes
 
 %files devel
 %defattr(644,root,root,755)
