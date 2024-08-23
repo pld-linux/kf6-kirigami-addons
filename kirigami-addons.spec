@@ -11,12 +11,12 @@
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
 Name:		kirigami-addons
-Version:	1.2.1
+Version:	1.4.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
-# Source0-md5:	2412b8a953bb4ed6013c070672382aa7
+# Source0-md5:	27d23279ee0ad5252a862c2671bc05ad
 URL:		http://www.kde.org/
 %if %{with qt5}
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -85,6 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}6.lang
 %defattr(644,root,root,755)
@@ -209,7 +212,44 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private/TableCellDelegate.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/tableviewplugin.qmltypes
+%attr(755,root,root) %{_libdir}/libKirigamiAddonsStatefulApp.so.*.*
+%ghost %{_libdir}/libKirigamiAddonsStatefulApp.so.?
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/FormTextAreaDelegate.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationModule.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationView.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/SpellcheckingConfigurationModule.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ActionIconGroup.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ConfigMobilePage.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ConfigWindow.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/SonnetConfigPage.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/libsettingsprivateplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/qmldir
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/settingsprivateplugin.qmltypes
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/KirigamiAddonsStatefulApp.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/StatefulWindow.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/kde-qmlmodule.version
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/NativeMenuItem.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/libstatefulapplabsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/qmldir
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/statefulapplabsplugin.qmltypes
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/libKirigamiAddonsStatefulAppplugin.so
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/KQuickCommandBarPage.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/KeySequenceItem.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/ShortcutsEditor.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/libstatefulappprivateplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/qmldir
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/statefulappprivateplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/qmldir
+%{_datadir}/kdevappwizard/templates/kirigamiaddons6.tar.bz2
 
 %files devel
 %defattr(644,root,root,755)
+%{_includedir}/KirigamiAddonsStatefulApp
+%{_libdir}/libKirigamiAddonsStatefulApp.so
 %{_libdir}/cmake/KF6KirigamiAddons
