@@ -12,7 +12,7 @@
 Summary:	Kirigami addons library
 Name:		kirigami-addons
 Version:	1.4.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
@@ -192,6 +192,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/libtreeviewplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/styles
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/TreeViewDecoration.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/treeviewplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/FloatingToolBar.qml
@@ -218,6 +220,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationModule.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationView.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/SpellcheckingConfigurationModule.qml
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ActionIconGroup.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ConfigMobilePage.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/ConfigWindow.qml
