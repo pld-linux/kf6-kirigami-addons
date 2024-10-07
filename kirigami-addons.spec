@@ -10,6 +10,7 @@
 %define		qtver		5.15.2
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
+Summary(pl.UTF-8):	Biblioteka Kirigami addons
 Name:		kirigami-addons
 Version:	1.4.0
 Release:	2
@@ -17,7 +18,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
 # Source0-md5:	27d23279ee0ad5252a862c2671bc05ad
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 %if %{with qt5}
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -49,19 +50,29 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kirigami-addons library.
+Kirigami Addons is an additional set of visual components that work
+well on mobile and desktop and are guaranteed to be cross-platform. It
+uses Kirigami under the hood to create its components and should look
+native with any QtQuick Controls style.
+
+%description -l pl.UTF-8
+Kirigami Addons to dodatkowy zbiór komponentów graficznych dobrze
+działających na urządzeniach przenośnych jak i stacjonarnych, z
+gwarantowaną przenośnością między platformami. Pod spodem wykorzystuje
+Kirigami do tworzenia komponentów i powinien wyglądać zgodnie z
+dowolnym stylem kontrolek QtQuick.
 
 %package devel
-Summary:	Header files for %{name} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{name}
+Summary:	Header files for Kirigami addons development
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających Kirigami addons
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files for %{name} development.
+Header files for Kirigami addons development.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe dla programistów używających %{name}.
+Pliki nagłówkowe dla programistów używających Kirigami addons.
 
 %prep
 %setup -q
@@ -71,6 +82,7 @@ Pliki nagłówkowe dla programistów używających %{name}.
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+
 %ninja_build -C build
 
 %if %{with tests}
@@ -79,6 +91,7 @@ ctest --test-dir build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 %find_lang %{name}6
