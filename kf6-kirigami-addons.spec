@@ -1,36 +1,23 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%bcond_with	qt5		# build qt5
-%bcond_without	qt6		# build qt6
 #
 # TODO:
 # - runtime Requires if any
 
-%define		qtver		5.15.2
+%define		qtver		6.0.0
 %define		kfname		kirigami-addons
 Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
-Name:		kirigami-addons
+# not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
+Name:		kf6-kirigami-addons
 Version:	1.4.0
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/kirigami-addons/%{name}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
 # Source0-md5:	27d23279ee0ad5252a862c2671bc05ad
 URL:		https://kde.org/
-%if %{with qt5}
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Network-devel >= %{qtver}
-BuildRequires:	Qt5Quick-controls2-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	kf5-extra-cmake-modules >= 5.102.0
-BuildRequires:	kf5-kirigami2-devel >= 5.102.0
-BuildRequires:	qt5-build >= %{qtver}
-Requires:	kf5-dirs
-%endif
-%if %{with qt6}
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
 BuildRequires:	Qt6Network-devel >= %{qtver}
@@ -39,14 +26,14 @@ BuildRequires:	Qt6Test-devel >= %{qtver}
 BuildRequires:	kf6-extra-cmake-modules >= 5.102.0
 BuildRequires:	kf6-kirigami-devel >= 5.102.0
 BuildRequires:	qt6-build >= %{qtver}
-Requires:	kf6-dirs
-%endif
 BuildRequires:	catdoc
 BuildRequires:	cmake >= 3.20
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	kf6-dirs
+Obsoletes:	kirigami-addons < 1.4.0-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,6 +54,7 @@ Summary:	Header files for Kirigami addons development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających Kirigami addons
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	kirigami-addons-devel < 1.4.0-3
 
 %description devel
 Header files for Kirigami addons development.
@@ -94,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
 
-%find_lang %{name}6
+%find_lang kirigami-addons6
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -102,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{name}6.lang
+%files -f kirigami-addons6.lang
 %defattr(644,root,root,755)
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components
