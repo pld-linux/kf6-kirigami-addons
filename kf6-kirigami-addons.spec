@@ -63,7 +63,7 @@ Header files for Kirigami addons development.
 Pliki nagłówkowe dla programistów używających Kirigami addons.
 
 %prep
-%setup -q
+%setup -q -n %{kfname}-%{version}
 
 %build
 %cmake -B build \
