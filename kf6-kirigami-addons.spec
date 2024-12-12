@@ -12,17 +12,18 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.4.0
-Release:	3
+Version:	1.5.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	27d23279ee0ad5252a862c2671bc05ad
+# Source0-md5:	59b077b8bc97f6bc151380c9bf7b02bf
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
 BuildRequires:	Qt6Qml-devel >= %{qt_ver}
 BuildRequires:	Qt6Quick-devel >= %{qt_ver}
+BuildRequires:	cmake >= 3.20
 BuildRequires:	kf6-extra-cmake-modules >= %{kf_ver}
 BuildRequires:	kf6-kconfig-devel >= %{kf_ver}
 BuildRequires:	kf6-kcoreaddons-devel >= %{kf_ver}
@@ -30,9 +31,8 @@ BuildRequires:	kf6-kglobalaccel-devel >= %{kf_ver}
 BuildRequires:	kf6-kguiaddons-devel >= %{kf_ver}
 BuildRequires:	kf6-ki18n-devel >= %{kf_ver}
 BuildRequires:	kf6-kirigami-devel >= %{kf_ver}
-BuildRequires:	qt6-build >= %{qt_ver}
-BuildRequires:	cmake >= 3.20
 BuildRequires:	ninja
+BuildRequires:	qt6-build >= %{qt_ver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -205,3 +205,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKirigamiAddonsStatefulApp.so
 %{_includedir}/KirigamiAddonsStatefulApp
 %{_libdir}/cmake/KF6KirigamiAddons
+%{_datadir}/kdevappwizard/templates/librarymanager6.tar.bz2
