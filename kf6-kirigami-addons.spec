@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.6.0
+Version:	1.9.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	8d820509d5de52266973f4a1e7a05fa2
+# Source0-md5:	0935e45ed27717cc492f71a643edc78c
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -121,6 +121,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/componentsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/private/ActionMenuItem.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/private/ActionsMenu.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/private/ContextMenuPage.qml
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/private
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/libdateandtimeplugin.so
