@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.9.0
+Version:	1.10.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	0935e45ed27717cc492f71a643edc78c
+# Source0-md5:	b7c598c947b359514e3b3ea4b52f692d
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -112,11 +112,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kirigami-addons6.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKirigamiAddonsStatefulApp.so.*.*.*
+%{_libdir}/libKirigamiApp.so.*.*.*
+%ghost %{_libdir}/libKirigamiApp.so.6
+%{_libdir}/libKirigamiAddonsStatefulApp.so.*.*.*
 %ghost %{_libdir}/libKirigamiAddonsStatefulApp.so.6
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/componentsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/kde-qmlmodule.version
@@ -127,77 +129,77 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/private/ContextMenuPage.qml
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/private
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/libdateandtimeplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/libdateandtimeplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/dateandtimeplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/dateandtime/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/delegatesplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/private
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/formcardplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/libcomponentslabsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/libcomponentslabsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/componentslabsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/libsettingsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/libsettingsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/settingsplugin.qmltypes
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/libsettingsprivateplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/libsettingsprivateplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/private/settingsprivateplugin.qmltypes
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/libsoundsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/libsoundsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/sounds/soundsplugin.qmltypes
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/libKirigamiAddonsStatefulAppplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/libKirigamiAddonsStatefulAppplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/KirigamiAddonsStatefulApp.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/libstatefulapplabsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/libstatefulapplabsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/statefulapplabsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/libstatefulappprivateplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/libstatefulappprivateplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/statefulappprivateplugin.qmltypes
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/private
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/libtableviewplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/libtableviewplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/tableview/tableviewplugin.qmltypes
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/styles
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/libtreeviewplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/libtreeviewplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/*.qml
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/qmldir
@@ -206,7 +208,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%{_libdir}/libKirigamiApp.so
 %{_libdir}/libKirigamiAddonsStatefulApp.so
+%{_includedir}/KirigamiAddons
 %{_includedir}/KirigamiAddonsStatefulApp
 %{_libdir}/cmake/KF6KirigamiAddons
 %{_datadir}/kdevappwizard/templates/librarymanager6.tar.bz2
