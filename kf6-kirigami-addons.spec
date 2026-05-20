@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.10.0
+Version:	1.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	b7c598c947b359514e3b3ea4b52f692d
+# Source0-md5:	cfc77067a7a30c1a45b47174754469f6
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -112,10 +112,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kirigami-addons6.lang
 %defattr(644,root,root,755)
-%{_libdir}/libKirigamiApp.so.*.*.*
-%ghost %{_libdir}/libKirigamiApp.so.6
+%{_libdir}/libKirigamiAddonsComponents.so.*.*.*
+%ghost %{_libdir}/libKirigamiAddonsComponents.so.6
 %{_libdir}/libKirigamiAddonsStatefulApp.so.*.*.*
 %ghost %{_libdir}/libKirigamiAddonsStatefulApp.so.6
+%{_libdir}/libKirigamiApp.so.*.*.*
+%ghost %{_libdir}/libKirigamiApp.so.6
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
@@ -208,8 +210,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libKirigamiApp.so
+%{_libdir}/libKirigamiAddonsComponents.so
 %{_libdir}/libKirigamiAddonsStatefulApp.so
+%{_libdir}/libKirigamiApp.so
 %{_includedir}/KirigamiAddons
 %{_includedir}/KirigamiAddonsStatefulApp
 %{_libdir}/cmake/KF6KirigamiAddons
