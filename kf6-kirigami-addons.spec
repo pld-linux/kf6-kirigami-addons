@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.12.1
+Version:	1.13.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	cfc77067a7a30c1a45b47174754469f6
+# Source0-md5:	d3a1944cb0dddcea3f441f04ee54c0d0
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -156,6 +156,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/componentslabsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/labs/components/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/OnboardToolTip.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/libonboardingplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/onboardingplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/private/OnboardingEffect.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/private/OnboardingOverlay.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/onboarding/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/libsettingsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/settings/*.qml
