@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.13.1
+Version:	1.14.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	d3a1944cb0dddcea3f441f04ee54c0d0
+# Source0-md5:	cff87bbfaba430fb86e35643976c7dec
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -119,6 +119,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKirigamiApp.so.*.*.*
 %ghost %{_libdir}/libKirigamiApp.so.6
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/*.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/KirigamiAddonsActionsQml.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/kde-qmlmodule.version
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs/*.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs/actionslabsplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs/libactionslabsplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/labs/qmldir
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/libKirigamiAddonsActionsQml.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/actions/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/*.qml
