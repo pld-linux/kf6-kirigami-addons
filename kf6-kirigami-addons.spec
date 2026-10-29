@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.15.0
+Version:	1.16.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	458b64d6c143c44c2e12f80922e8e274
+# Source0-md5:	e5fc30cd2aed108acaa82a86dae122b5
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
@@ -227,6 +227,35 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/qmldir
 %{_libdir}/qt6/qml/org/kde/kirigamiaddons/treeview/treeviewplugin.qmltypes
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/styles
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/styles/Material
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/styles/Material/*.qml
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/*.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/componentstemplatesplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/libcomponentstemplatesplugin.so
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/private/*.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/components/templates/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/styles
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/styles/Material
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/delegates/styles/Material/*.qml
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/styles
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/styles/Material
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/styles/Material/*.qml
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates/*.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates/formcardtemplatesplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates/libformcardtemplatesplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/formcard/templates/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/kirigamiaddons/private
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/private/I18n.qml
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/private/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/private/kirigamiaddonsprivateplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/private/libkirigamiaddonsprivateplugin.so
+%{_libdir}/qt6/qml/org/kde/kirigamiaddons/private/qmldir
 %{_datadir}/kdevappwizard/templates/kirigamiaddons6.tar.bz2
 
 %files devel
