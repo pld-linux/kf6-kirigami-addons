@@ -12,12 +12,12 @@ Summary:	Kirigami addons library
 Summary(pl.UTF-8):	Biblioteka Kirigami addons
 # not strictly part of framework, but closely bound to KF6 (and cmake config is named KF6KirigamiAddons)
 Name:		kf6-kirigami-addons
-Version:	1.16.0
+Version:	1.16.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/kirigami-addons/%{kfname}-%{version}.tar.xz
-# Source0-md5:	e5fc30cd2aed108acaa82a86dae122b5
+# Source0-md5:	55365053fffed79d36370328e4523b4e
 URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qt_ver}
 BuildRequires:	Qt6Gui-devel >= %{qt_ver}
